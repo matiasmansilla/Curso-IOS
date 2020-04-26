@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBAction func logintaped(_ sender: Any) {
+    @IBAction func loginTaped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "LoginViewController", bundle: nil)
         let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         navigationController?.pushViewController(loginVC, animated: true)
