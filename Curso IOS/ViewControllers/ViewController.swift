@@ -11,9 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func loginTaped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "LoginViewController", bundle: nil)
-        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-        navigationController?.pushViewController(loginVC, animated: true)
+        LoginWireframe.navigateToLogin(from: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
