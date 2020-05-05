@@ -10,12 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBAction func loginTaped(_ sender: Any) {
-        LoginWireframe.navigateToLogin(from: self)
-    }
+//    @IBAction func loginTaped(_ sender: Any) {
+//        LoginWireframe.navigateToLogin(from: self)
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MainWireframe.navigateToHomeScreen(from: self)
     }
 
 

@@ -26,8 +26,14 @@ class LoginPresenter{
 
 extension LoginPresenter: LoginPresenterProtocol{
     func login(username: String, password: String) {
-        repository.login(username: username, password: password) { (user) in
-            print(user?.name ?? "username empty")
+        repository.login(username: username, password: password) { (user, error) in
+            if let user = user {
+                SessionHelper().save(user : user)
+                self.view?.showLoginSucess()
+            } else {
+                self.view?.show(error: error ?? "Ocurrio un error")
+            }
+            
         }
 
     }

@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let user = SessionHelper().getUser()
+        print(user?.name)
+        print(user?.token)
         // Override point for customization after application launch.
         return true
     }

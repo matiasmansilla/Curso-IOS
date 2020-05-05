@@ -18,6 +18,8 @@
 		5451348224549BA7000685E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451348124549BA7000685E8 /* LoginViewController.swift */; };
 		5456230D245FAD4A00D4040D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456230C245FAD4A00D4040D /* LoginPresenter.swift */; };
 		54562310245FB1F700D4040D /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456230F245FB1F700D4040D /* LoginWireframe.swift */; };
+		54E4E98A2461C657007C49D0 /* SessionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4E9892461C657007C49D0 /* SessionHelper.swift */; };
+		54E4E98D2461E9CA007C49D0 /* MainWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4E98C2461E9CA007C49D0 /* MainWireframe.swift */; };
 		54E7847B245559E000CE9B5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7847A245559E000CE9B5D /* Extensions.swift */; };
 		54E7849A24555D9D00CE9B5D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7849924555D9D00CE9B5D /* User.swift */; };
 		54E7849C24555E1800CE9B5D /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7849B24555E1800CE9B5D /* AuthRepository.swift */; };
@@ -44,6 +46,8 @@
 		5451348124549BA7000685E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5456230C245FAD4A00D4040D /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		5456230F245FB1F700D4040D /* LoginWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
+		54E4E9892461C657007C49D0 /* SessionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHelper.swift; sourceTree = "<group>"; };
+		54E4E98C2461E9CA007C49D0 /* MainWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWireframe.swift; sourceTree = "<group>"; };
 		54E7847A245559E000CE9B5D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		54E7849924555D9D00CE9B5D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		54E7849B24555E1800CE9B5D /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 		5451346924549880000685E8 /* Curso IOS */ = {
 			isa = PBXGroup;
 			children = (
+				54E4E9882461C63F007C49D0 /* Helpers */,
 				5456230E245FB1D800D4040D /* Wireframe */,
 				5456230B245FAD2500D4040D /* Presenters */,
 				54E7849F24556BEF00CE9B5D /* Network */,
@@ -149,8 +154,17 @@
 			isa = PBXGroup;
 			children = (
 				5456230F245FB1F700D4040D /* LoginWireframe.swift */,
+				54E4E98C2461E9CA007C49D0 /* MainWireframe.swift */,
 			);
 			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		54E4E9882461C63F007C49D0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				54E4E9892461C657007C49D0 /* SessionHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		54E784792455599A00CE9B5D /* Extensions */ = {
@@ -334,9 +348,11 @@
 				54562310245FB1F700D4040D /* LoginWireframe.swift in Sources */,
 				54E784B024556BF000CE9B5D /* HttpManager.swift in Sources */,
 				54E784AE24556BF000CE9B5D /* HttpRequestBuilder.swift in Sources */,
+				54E4E98A2461C657007C49D0 /* SessionHelper.swift in Sources */,
 				54E784AA24556BF000CE9B5D /* ApiUrls.swift in Sources */,
 				54E784AF24556BF000CE9B5D /* BaseRepository.swift in Sources */,
 				54E784A924556BF000CE9B5D /* ApiRequestBuilder.swift in Sources */,
+				54E4E98D2461E9CA007C49D0 /* MainWireframe.swift in Sources */,
 				54E7849A24555D9D00CE9B5D /* User.swift in Sources */,
 				54E784AC24556BF000CE9B5D /* ErrorReponse.swift in Sources */,
 				5451346B24549880000685E8 /* AppDelegate.swift in Sources */,

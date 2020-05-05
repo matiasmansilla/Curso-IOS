@@ -11,13 +11,13 @@ import UIKit
 
 class LoginWireframe {
     
-    static func navigateToLogin(from context: UIViewController) {   //from context es para obtener su navController
+    static func navigateToLogin(from context: UIViewController) {   //from context es para obtener su navigationController
         let storyboard = UIStoryboard(name: "LoginViewController", bundle: .main)
         let loginVC = storyboard.instantiateViewController(identifier: "LoginViewController") as LoginViewController
         
         let loginPresenter = LoginPresenter(view: loginVC)  //instanciamos un presenter y le pasamos la vista
         loginVC.presenter = loginPresenter                  //le enchufamos el presenter a la vista
-        context.navigationController?.pushViewController(loginVC, animated: true)
+        context.navigationController?.setViewControllers([loginVC], animated: true)
             
     }
 }
