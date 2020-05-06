@@ -15,7 +15,7 @@ protocol LoginViewProtocol: class {
 
 class LoginPresenter{
     
-    var view: LoginViewProtocol?
+    weak var view: LoginViewProtocol?
     let repository = AuthRepository()
     
     init (view: LoginViewProtocol){

@@ -23,4 +23,8 @@ class SessionHelper {
         
         return nil
     }
+    
+    func cleanSession(){
+        defaults.set(nil, forKey: key)
+    }
 }
