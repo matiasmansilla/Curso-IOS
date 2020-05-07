@@ -17,12 +17,77 @@ class NewExpenseViewController : UIViewController {
     
     var presenter: NewExpensePresenterProtocol?
     
+    @IBOutlet weak var accountContainer: UIView!
+    @IBOutlet weak var accountLabel: UILabel!
+    @IBOutlet weak var categoryContainer: UIView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var providerContainer: UIView!
+    @IBOutlet weak var providerLabel: UILabel!
+    @IBOutlet weak var montoTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var quantityTextField: UITextField!
+    @IBOutlet weak var currencyLabel: UILabel!
+    
+    @IBAction func createTapped(_ sender: Any) {
+    }
+    
     @IBAction func LogoutTapped(_ sender: Any) {
         presenter?.logout()
         MainWireframe.navigateToHomeScreen(from: self)
     }
     
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+    private func setupUI(){
+        accountContainer?.layer.borderWidth = 1
+        accountContainer?.layer.borderColor = UIColor.lightGray.cgColor
+        accountContainer?.layer.cornerRadius = 8
+        
+        categoryContainer?.layer.borderWidth = 1
+        categoryContainer?.layer.borderColor = UIColor.lightGray.cgColor
+        categoryContainer?.layer.cornerRadius = 8
+        
+        providerContainer?.layer.borderWidth = 1
+        providerContainer?.layer.borderColor = UIColor.lightGray.cgColor
+        providerContainer?.layer.cornerRadius = 8
+    
+        montoTextField?.layer.borderWidth = 1
+        montoTextField?.layer.borderColor = UIColor.lightGray.cgColor
+        montoTextField?.layer.cornerRadius = 8
+        
+        descriptionTextField?.layer.borderWidth = 1
+        descriptionTextField?.layer.borderColor = UIColor.lightGray.cgColor
+        descriptionTextField?.layer.cornerRadius = 8
+        
+        quantityTextField?.layer.borderWidth = 1
+        quantityTextField?.layer.borderColor = UIColor.lightGray.cgColor
+        quantityTextField?.layer.cornerRadius = 8
+        
+        //asi creo gesture sobre una view (no un boton), # es x seleccionde de funcion
+        let gesture1 = UITapGestureRecognizer(target: self, action: #selector(accountSelectorTapped))
+        accountContainer?.addGestureRecognizer(gesture1)
+        accountContainer?.isUserInteractionEnabled = true
+        
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(categorySelectorTapped))
+        categoryContainer?.addGestureRecognizer(gesture2)
+        categoryContainer?.isUserInteractionEnabled = true
+        
+        let gesture3 = UITapGestureRecognizer(target: self, action: #selector(providertSelectorTapped))
+        providerContainer?.addGestureRecognizer(gesture3)
+        providerContainer?.isUserInteractionEnabled = true
+    }
+    
+    @objc private func accountSelectorTapped(){
+        print("account tapped")
+    }
+    @objc private func categorySelectorTapped(){
+        print("category tapped")
+    }
+    @objc private func providertSelectorTapped(){
+        print("provider tapped")
+    }
 }
 
 extension NewExpenseViewController: NewExpenseViewProtocol {    //implementacion del protocolo de la vista
