@@ -11,6 +11,10 @@ import UIKit
 
 protocol NewExpensePresenterProtocol: class {
     func logout()
+    func accountTapped()
+    func categoryTapped()
+    func providerTapped()
+    func createTapped()
 
 }
 class NewExpenseViewController : UIViewController {
@@ -29,11 +33,11 @@ class NewExpenseViewController : UIViewController {
     @IBOutlet weak var currencyLabel: UILabel!
     
     @IBAction func createTapped(_ sender: Any) {
+        presenter?.createTapped()
     }
     
     @IBAction func LogoutTapped(_ sender: Any) {
         presenter?.logout()
-        MainWireframe.navigateToHomeScreen(from: self)
     }
     
     override func viewDidLoad() {
@@ -80,16 +84,36 @@ class NewExpenseViewController : UIViewController {
     }
     
     @objc private func accountSelectorTapped(){
-        print("account tapped")
+        //print("accounttapped")
+        presenter?.accountTapped()
     }
     @objc private func categorySelectorTapped(){
-        print("category tapped")
+        presenter?.categoryTapped()
     }
     @objc private func providertSelectorTapped(){
-        print("provider tapped")
+        presenter?.providerTapped()
     }
 }
 
-extension NewExpenseViewController: NewExpenseViewProtocol {    //implementacion del protocolo de la vista
+extension NewExpenseViewController: NewExpenseViewProtocol {
+    
+    func navigateToHomescreen() {
+        MainWireframe.navigateToHomeScreen(from: self)
+    }
+    
+    func navigateToAccountSelector() {
+        SelectorWireframe.navigateToAccountSelector(from: self)
+    }
+    
+    func navigateToCategorySelector() {
+        SelectorWireframe.navigateToCategorySelector(from: self)
+
+    }
+    
+    func navigateToProviderSelector() {
+        SelectorWireframe.navigateToProviderSelector(from: self)
+
+    }
+    //implementacion del protocolo de la vista
     
 }

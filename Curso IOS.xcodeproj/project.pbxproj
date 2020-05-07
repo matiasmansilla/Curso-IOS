@@ -18,6 +18,15 @@
 		5451348224549BA7000685E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451348124549BA7000685E8 /* LoginViewController.swift */; };
 		5456230D245FAD4A00D4040D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456230C245FAD4A00D4040D /* LoginPresenter.swift */; };
 		54562310245FB1F700D4040D /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456230F245FB1F700D4040D /* LoginWireframe.swift */; };
+		5468AA3124646B050008985A /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468AA3024646B050008985A /* Account.swift */; };
+		5468AA3324646B6D0008985A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468AA3224646B6D0008985A /* Currency.swift */; };
+		5468AA3524646CEE0008985A /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468AA3424646CEE0008985A /* AccountRepository.swift */; };
+		5468AA372464725F0008985A /* AccountSelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468AA362464725F0008985A /* AccountSelectorPresenter.swift */; };
+		54AAF61424643E0F009D6E6E /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AAF61324643E0F009D6E6E /* SelectorViewController.swift */; };
+		54AAF61624643E31009D6E6E /* SelectorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54AAF61524643E31009D6E6E /* SelectorViewController.storyboard */; };
+		54AAF61824643E9A009D6E6E /* SelectorWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AAF61724643E9A009D6E6E /* SelectorWireframe.swift */; };
+		54AAF61B24645B56009D6E6E /* SelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AAF61A24645B56009D6E6E /* SelectorTableViewCell.swift */; };
+		54AAF61D24645B98009D6E6E /* SelectorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54AAF61C24645B98009D6E6E /* SelectorTableViewCell.xib */; };
 		54E4E98A2461C657007C49D0 /* SessionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4E9892461C657007C49D0 /* SessionHelper.swift */; };
 		54E4E98D2461E9CA007C49D0 /* MainWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4E98C2461E9CA007C49D0 /* MainWireframe.swift */; };
 		54E7847B245559E000CE9B5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7847A245559E000CE9B5D /* Extensions.swift */; };
@@ -50,6 +59,15 @@
 		5451348124549BA7000685E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5456230C245FAD4A00D4040D /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		5456230F245FB1F700D4040D /* LoginWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
+		5468AA3024646B050008985A /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		5468AA3224646B6D0008985A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		5468AA3424646CEE0008985A /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
+		5468AA362464725F0008985A /* AccountSelectorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorPresenter.swift; sourceTree = "<group>"; };
+		54AAF61324643E0F009D6E6E /* SelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewController.swift; sourceTree = "<group>"; };
+		54AAF61524643E31009D6E6E /* SelectorViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectorViewController.storyboard; sourceTree = "<group>"; };
+		54AAF61724643E9A009D6E6E /* SelectorWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorWireframe.swift; sourceTree = "<group>"; };
+		54AAF61A24645B56009D6E6E /* SelectorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorTableViewCell.swift; sourceTree = "<group>"; };
+		54AAF61C24645B98009D6E6E /* SelectorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectorTableViewCell.xib; sourceTree = "<group>"; };
 		54E4E9892461C657007C49D0 /* SessionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHelper.swift; sourceTree = "<group>"; };
 		54E4E98C2461E9CA007C49D0 /* MainWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWireframe.swift; sourceTree = "<group>"; };
 		54E7847A245559E000CE9B5D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -114,6 +132,7 @@
 		5451346924549880000685E8 /* Curso IOS */ = {
 			isa = PBXGroup;
 			children = (
+				54AAF61924645B0E009D6E6E /* Views */,
 				54E4E9882461C63F007C49D0 /* Helpers */,
 				54E7849F24556BEF00CE9B5D /* Network */,
 				5456230E245FB1D800D4040D /* Wireframe */,
@@ -138,6 +157,7 @@
 				5451347E24549B5F000685E8 /* LoginViewController.storyboard */,
 				5451347024549880000685E8 /* Main.storyboard */,
 				54FAB5D02462EC8D0096A145 /* NewExpenseViewController.storyboard */,
+				54AAF61524643E31009D6E6E /* SelectorViewController.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -148,6 +168,7 @@
 				5451348124549BA7000685E8 /* LoginViewController.swift */,
 				5451346E24549880000685E8 /* ViewController.swift */,
 				54FAB5CE2462EC2F0096A145 /* NewExpenseViewController.swift */,
+				54AAF61324643E0F009D6E6E /* SelectorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -157,6 +178,7 @@
 			children = (
 				5456230C245FAD4A00D4040D /* LoginPresenter.swift */,
 				54FAB5D22462ED780096A145 /* NewExpensePresenter.swift */,
+				5468AA362464725F0008985A /* AccountSelectorPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -167,8 +189,18 @@
 				5456230F245FB1F700D4040D /* LoginWireframe.swift */,
 				54E4E98C2461E9CA007C49D0 /* MainWireframe.swift */,
 				54FAB5D62462F0E10096A145 /* ExpensesWireframe.swift */,
+				54AAF61724643E9A009D6E6E /* SelectorWireframe.swift */,
 			);
 			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		54AAF61924645B0E009D6E6E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54AAF61A24645B56009D6E6E /* SelectorTableViewCell.swift */,
+				54AAF61C24645B98009D6E6E /* SelectorTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		54E4E9882461C63F007C49D0 /* Helpers */ = {
@@ -191,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				54E7849B24555E1800CE9B5D /* AuthRepository.swift */,
+				5468AA3424646CEE0008985A /* AccountRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -199,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				54E7849924555D9D00CE9B5D /* User.swift */,
+				5468AA3024646B050008985A /* Account.swift */,
+				5468AA3224646B6D0008985A /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,8 +329,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54AAF61624643E31009D6E6E /* SelectorViewController.storyboard in Resources */,
 				5451347724549882000685E8 /* LaunchScreen.storyboard in Resources */,
 				5451347F24549B60000685E8 /* LoginViewController.storyboard in Resources */,
+				54AAF61D24645B98009D6E6E /* SelectorTableViewCell.xib in Resources */,
 				54FAB5D12462EC8D0096A145 /* NewExpenseViewController.storyboard in Resources */,
 				5451347424549882000685E8 /* Assets.xcassets in Resources */,
 				5451347224549880000685E8 /* Main.storyboard in Resources */,
@@ -352,17 +389,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				5456230D245FAD4A00D4040D /* LoginPresenter.swift in Sources */,
+				5468AA3124646B050008985A /* Account.swift in Sources */,
 				54E7849C24555E1800CE9B5D /* AuthRepository.swift in Sources */,
+				54AAF61B24645B56009D6E6E /* SelectorTableViewCell.swift in Sources */,
 				54E7847B245559E000CE9B5D /* Extensions.swift in Sources */,
 				5451348224549BA7000685E8 /* LoginViewController.swift in Sources */,
 				5451346F24549880000685E8 /* ViewController.swift in Sources */,
+				5468AA3524646CEE0008985A /* AccountRepository.swift in Sources */,
 				54E784AD24556BF000CE9B5D /* NetworkRequestManager.swift in Sources */,
 				54FAB5D32462ED780096A145 /* NewExpensePresenter.swift in Sources */,
+				5468AA3324646B6D0008985A /* Currency.swift in Sources */,
 				54E784AB24556BF000CE9B5D /* LoginResponse.swift in Sources */,
 				54562310245FB1F700D4040D /* LoginWireframe.swift in Sources */,
 				54E784B024556BF000CE9B5D /* HttpManager.swift in Sources */,
+				54AAF61424643E0F009D6E6E /* SelectorViewController.swift in Sources */,
 				54E784AE24556BF000CE9B5D /* HttpRequestBuilder.swift in Sources */,
 				54FAB5D72462F0E10096A145 /* ExpensesWireframe.swift in Sources */,
+				54AAF61824643E9A009D6E6E /* SelectorWireframe.swift in Sources */,
 				54E4E98A2461C657007C49D0 /* SessionHelper.swift in Sources */,
 				54E784AA24556BF000CE9B5D /* ApiUrls.swift in Sources */,
 				54E784AF24556BF000CE9B5D /* BaseRepository.swift in Sources */,
@@ -371,6 +414,7 @@
 				54E7849A24555D9D00CE9B5D /* User.swift in Sources */,
 				54E784AC24556BF000CE9B5D /* ErrorReponse.swift in Sources */,
 				5451346B24549880000685E8 /* AppDelegate.swift in Sources */,
+				5468AA372464725F0008985A /* AccountSelectorPresenter.swift in Sources */,
 				54FAB5CF2462EC2F0096A145 /* NewExpenseViewController.swift in Sources */,
 				5451346D24549880000685E8 /* SceneDelegate.swift in Sources */,
 			);

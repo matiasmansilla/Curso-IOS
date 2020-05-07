@@ -8,13 +8,17 @@
 
 import Foundation
 
-protocol NewExpenseViewProtocol {
-    
+protocol NewExpenseViewProtocol: class {
+    func navigateToAccountSelector()
+    func navigateToCategorySelector()
+    func navigateToProviderSelector()
+    //func showAccount()
+    func navigateToHomescreen()
 }
 
-class NewExpensePresenter{
+class NewExpensePresenter {
     
-    var view: NewExpenseViewProtocol?
+    weak var view: NewExpenseViewProtocol?
     
     init(view: NewExpenseViewProtocol) {
         self.view = view
@@ -26,7 +30,24 @@ class NewExpensePresenter{
 
 
 extension NewExpensePresenter: NewExpensePresenterProtocol {
+    func accountTapped() {
+        view?.navigateToAccountSelector()
+    }
+    
+    func categoryTapped() {
+        view?.navigateToCategorySelector()
+    }
+    
+    func providerTapped() {
+        view?.navigateToProviderSelector()
+    }
+    
+    func createTapped() {
+        print("create Tapped")
+    }
+    
     func logout(){
     SessionHelper().cleanSession()
+    view?.navigateToHomescreen()
     }
 }

@@ -16,6 +16,8 @@ extension NetworkRequestManager: RequestAdapter {
     
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
         var urlRequest = urlRequest
+        let token = SessionHelper().getUser()?.token
+        urlRequest.setValue(token , forHTTPHeaderField: "Authorization")
         // here customize all requests
         return urlRequest
     }

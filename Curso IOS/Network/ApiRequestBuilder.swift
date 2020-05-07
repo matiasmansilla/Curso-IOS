@@ -22,4 +22,8 @@ class ApiRequestBuilder: HttpRequestBuilder {
         ]
         return buildRequest(path: ApiUrls.login, method: .post, params: params)
     }
+    
+    func accounts()->DataRequest{
+        return buildRequest(path: ApiUrls.accounts, method: .get)
+    }
 }
