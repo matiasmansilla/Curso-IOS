@@ -30,6 +30,7 @@ class SelectorViewController: UIViewController {
         //MUCHO MUY IMPORTANTE(le digo quien es su dataSource y su delegate)
         tableview?.dataSource = self
         tableview?.delegate = self
+        // tableview?.rowHeight = 100       //nos va servir pa la prox pantalla
     }
     
     override func viewWillAppear(_ animated: Bool) {

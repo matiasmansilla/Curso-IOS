@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Expenses View Controller-->
+        <scene sceneID="AVB-HM-Fez">
+            <objects>
+                <viewController storyboardIdentifier="MyExpensesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XqF-mf-4pc" customClass="MyExpensesViewController" customModule="Curso_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e6d-vp-8LE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoW-FK-Bmv">
+                                <rect key="frame" x="80" y="802" width="254" height="44"/>
+                                <color key="backgroundColor" name="Accent"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="hmq-6t-evv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Nuevo gasto">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eQe-Rh-o6X">
+                                <rect key="frame" x="8" y="174" width="398" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2u-mh-OkQ">
+                                <rect key="frame" x="8" y="142" width="169" height="14.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis Gastos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAn-qY-LOA">
+                                <rect key="frame" x="32" y="100.66666666666667" width="351" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YqN-9K-UHW" firstAttribute="trailing" secondItem="HoW-FK-Bmv" secondAttribute="trailing" constant="80" id="5E4-GR-jfQ"/>
+                            <constraint firstItem="YqN-9K-UHW" firstAttribute="trailing" secondItem="eQe-Rh-o6X" secondAttribute="trailing" constant="8" id="89c-3A-fOi"/>
+                            <constraint firstItem="P2u-mh-OkQ" firstAttribute="top" secondItem="JAn-qY-LOA" secondAttribute="bottom" constant="21" id="FqZ-wS-3Fn"/>
+                            <constraint firstItem="P2u-mh-OkQ" firstAttribute="top" secondItem="YqN-9K-UHW" secondAttribute="top" constant="98" id="QTQ-m0-Ore"/>
+                            <constraint firstItem="eQe-Rh-o6X" firstAttribute="top" secondItem="YqN-9K-UHW" secondAttribute="top" constant="130" id="VSe-mP-2Lh"/>
+                            <constraint firstItem="HoW-FK-Bmv" firstAttribute="centerX" secondItem="e6d-vp-8LE" secondAttribute="centerX" id="W9v-cQ-4vM"/>
+                            <constraint firstItem="JAn-qY-LOA" firstAttribute="leading" secondItem="YqN-9K-UHW" secondAttribute="leading" constant="32" id="goK-kf-Mha"/>
+                            <constraint firstItem="YqN-9K-UHW" firstAttribute="bottom" secondItem="HoW-FK-Bmv" secondAttribute="bottom" constant="16" id="hfr-Fe-Ix9"/>
+                            <constraint firstItem="HoW-FK-Bmv" firstAttribute="leading" secondItem="YqN-9K-UHW" secondAttribute="leading" constant="80" id="iVe-hD-kfS"/>
+                            <constraint firstItem="eQe-Rh-o6X" firstAttribute="leading" secondItem="YqN-9K-UHW" secondAttribute="leading" constant="8" id="jbp-Pu-w3R"/>
+                            <constraint firstItem="YqN-9K-UHW" firstAttribute="trailing" secondItem="JAn-qY-LOA" secondAttribute="trailing" constant="31" id="n1z-KO-N9Z"/>
+                            <constraint firstItem="YqN-9K-UHW" firstAttribute="trailing" secondItem="P2u-mh-OkQ" secondAttribute="trailing" constant="237" id="rD2-ht-S1W"/>
+                            <constraint firstItem="YqN-9K-UHW" firstAttribute="bottom" secondItem="eQe-Rh-o6X" secondAttribute="bottom" constant="65" id="sUa-4N-ZMY"/>
+                            <constraint firstItem="P2u-mh-OkQ" firstAttribute="leading" secondItem="YqN-9K-UHW" secondAttribute="leading" constant="8" id="ytD-cm-rbd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YqN-9K-UHW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AYd-WG-dk2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18" y="16"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Accent">
+            <color red="0.11400000005960464" green="0.7839999794960022" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

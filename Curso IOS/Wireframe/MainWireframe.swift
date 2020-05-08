@@ -14,7 +14,7 @@ class MainWireframe {
     static func navigateToHomeScreen(from context: UIViewController){
         let user = SessionHelper().getUser()
         if user != nil{
-            ExpensesWireframe.navigateToNewExpense(from: context)
+            MyExpensesWireframe.navigateToMyExpenses(from: context)
         } else {
             LoginWireframe.navigateToLogin(from: context)
         }
