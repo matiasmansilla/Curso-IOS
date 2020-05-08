@@ -25,6 +25,8 @@ class SelectorWireframe {
         let storyboard = UIStoryboard(name: "SelectorViewController", bundle: .main)
         let vc = storyboard.instantiateViewController(identifier: "SelectorViewController") as SelectorViewController
         
+        let presenter = CategorySelectorPresenter(view: vc)
+        vc.presenter = presenter
         context.navigationController?.pushViewController(vc, animated: true)
         
     }
@@ -32,6 +34,8 @@ class SelectorWireframe {
         let storyboard = UIStoryboard(name: "SelectorViewController", bundle: .main)
         let vc = storyboard.instantiateViewController(identifier: "SelectorViewController") as SelectorViewController
         
+        let presenter = ProviderSelectorPresenter(view: vc)
+        vc.presenter = presenter
         context.navigationController?.pushViewController(vc, animated: true)
         
     }

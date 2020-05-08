@@ -27,8 +27,9 @@ class AccountSelectorPresenter {
 extension AccountSelectorPresenter: SelectorPresentProtocol{
     func fetchData() {
         repository.getAccounts { (accounts, error) in
-            self.accounts = accounts ?? []
-            self.view?.show(accounts: accounts ?? [])
+            self.accounts = accounts ?? []  //guardamos account
+            
+            self.view?.show(accounts: accounts ?? [])   //muestra los datos
         }
     }
     

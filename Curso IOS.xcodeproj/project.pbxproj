@@ -22,6 +22,12 @@
 		5468AA3324646B6D0008985A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468AA3224646B6D0008985A /* Currency.swift */; };
 		5468AA3524646CEE0008985A /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468AA3424646CEE0008985A /* AccountRepository.swift */; };
 		5468AA372464725F0008985A /* AccountSelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468AA362464725F0008985A /* AccountSelectorPresenter.swift */; };
+		548118E12464C006004E6C5A /* CategorySelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548118E02464C006004E6C5A /* CategorySelectorPresenter.swift */; };
+		548118E32464C017004E6C5A /* ProviderSelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548118E22464C017004E6C5A /* ProviderSelectorPresenter.swift */; };
+		548118E52464C139004E6C5A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548118E42464C139004E6C5A /* Category.swift */; };
+		548118E72464C15D004E6C5A /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548118E62464C15D004E6C5A /* Provider.swift */; };
+		548118E92464C1E7004E6C5A /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548118E82464C1E7004E6C5A /* CategoriesRepository.swift */; };
+		548118EB2464C219004E6C5A /* ProvidersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548118EA2464C219004E6C5A /* ProvidersRepository.swift */; };
 		54AAF61424643E0F009D6E6E /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AAF61324643E0F009D6E6E /* SelectorViewController.swift */; };
 		54AAF61624643E31009D6E6E /* SelectorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54AAF61524643E31009D6E6E /* SelectorViewController.storyboard */; };
 		54AAF61824643E9A009D6E6E /* SelectorWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AAF61724643E9A009D6E6E /* SelectorWireframe.swift */; };
@@ -63,6 +69,12 @@
 		5468AA3224646B6D0008985A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		5468AA3424646CEE0008985A /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		5468AA362464725F0008985A /* AccountSelectorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorPresenter.swift; sourceTree = "<group>"; };
+		548118E02464C006004E6C5A /* CategorySelectorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectorPresenter.swift; sourceTree = "<group>"; };
+		548118E22464C017004E6C5A /* ProviderSelectorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderSelectorPresenter.swift; sourceTree = "<group>"; };
+		548118E42464C139004E6C5A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		548118E62464C15D004E6C5A /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		548118E82464C1E7004E6C5A /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
+		548118EA2464C219004E6C5A /* ProvidersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersRepository.swift; sourceTree = "<group>"; };
 		54AAF61324643E0F009D6E6E /* SelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewController.swift; sourceTree = "<group>"; };
 		54AAF61524643E31009D6E6E /* SelectorViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectorViewController.storyboard; sourceTree = "<group>"; };
 		54AAF61724643E9A009D6E6E /* SelectorWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorWireframe.swift; sourceTree = "<group>"; };
@@ -179,6 +191,8 @@
 				5456230C245FAD4A00D4040D /* LoginPresenter.swift */,
 				54FAB5D22462ED780096A145 /* NewExpensePresenter.swift */,
 				5468AA362464725F0008985A /* AccountSelectorPresenter.swift */,
+				548118E02464C006004E6C5A /* CategorySelectorPresenter.swift */,
+				548118E22464C017004E6C5A /* ProviderSelectorPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -224,6 +238,8 @@
 			children = (
 				54E7849B24555E1800CE9B5D /* AuthRepository.swift */,
 				5468AA3424646CEE0008985A /* AccountRepository.swift */,
+				548118E82464C1E7004E6C5A /* CategoriesRepository.swift */,
+				548118EA2464C219004E6C5A /* ProvidersRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -234,6 +250,8 @@
 				54E7849924555D9D00CE9B5D /* User.swift */,
 				5468AA3024646B050008985A /* Account.swift */,
 				5468AA3224646B6D0008985A /* Currency.swift */,
+				548118E42464C139004E6C5A /* Category.swift */,
+				548118E62464C15D004E6C5A /* Provider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -395,9 +413,13 @@
 				54E7847B245559E000CE9B5D /* Extensions.swift in Sources */,
 				5451348224549BA7000685E8 /* LoginViewController.swift in Sources */,
 				5451346F24549880000685E8 /* ViewController.swift in Sources */,
+				548118E72464C15D004E6C5A /* Provider.swift in Sources */,
+				548118E52464C139004E6C5A /* Category.swift in Sources */,
+				548118E92464C1E7004E6C5A /* CategoriesRepository.swift in Sources */,
 				5468AA3524646CEE0008985A /* AccountRepository.swift in Sources */,
 				54E784AD24556BF000CE9B5D /* NetworkRequestManager.swift in Sources */,
 				54FAB5D32462ED780096A145 /* NewExpensePresenter.swift in Sources */,
+				548118EB2464C219004E6C5A /* ProvidersRepository.swift in Sources */,
 				5468AA3324646B6D0008985A /* Currency.swift in Sources */,
 				54E784AB24556BF000CE9B5D /* LoginResponse.swift in Sources */,
 				54562310245FB1F700D4040D /* LoginWireframe.swift in Sources */,
@@ -407,6 +429,8 @@
 				54FAB5D72462F0E10096A145 /* ExpensesWireframe.swift in Sources */,
 				54AAF61824643E9A009D6E6E /* SelectorWireframe.swift in Sources */,
 				54E4E98A2461C657007C49D0 /* SessionHelper.swift in Sources */,
+				548118E12464C006004E6C5A /* CategorySelectorPresenter.swift in Sources */,
+				548118E32464C017004E6C5A /* ProviderSelectorPresenter.swift in Sources */,
 				54E784AA24556BF000CE9B5D /* ApiUrls.swift in Sources */,
 				54E784AF24556BF000CE9B5D /* BaseRepository.swift in Sources */,
 				54E784A924556BF000CE9B5D /* ApiRequestBuilder.swift in Sources */,

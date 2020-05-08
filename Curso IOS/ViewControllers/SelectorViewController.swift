@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//protocolo generico que deben conformar los Presenters para manejar esta vista
 protocol SelectorPresentProtocol: class {
     func fetchData()
     func elementSelected(at index: Int)
@@ -64,16 +65,33 @@ extension SelectorViewController : UITableViewDelegate {
 }
 
 extension SelectorViewController: AccountSelectorViewProtocol{
-    //convierto [Account] en [String] porque la tabla necesita [String]
     func show(accounts: [Account]) {
+        //convierto [Account] en [String] porque la tabla necesita [String]
         let names = accounts.map { (account) -> String in
-            return (account.name ?? "") + "-" + (account.currency?.symbol ?? "")
-            
+            return (account.name ?? "") + " - " + (account.currency?.symbol ?? "")
+
         }
         elements = names
         tableview?.reloadData()
-
     }
-    
-    
+}
+
+extension SelectorViewController: CategorySelectorViewProtocol {
+    func show(categories: [Category]) {
+        let names = categories.map { (category) -> String in
+            return (category.name ?? "")
+        }
+        elements = names
+        tableview?.reloadData()
+    }
+}
+
+extension SelectorViewController: ProviderSelectorViewProtocol{
+    func show(providers: [Provider]) {
+        let names = providers.map { (provider) -> String in
+            return (provider.name ?? "")
+        }
+        elements = names
+        tableview?.reloadData()
+    }
 }
