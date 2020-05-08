@@ -14,6 +14,11 @@
 		54448C3D24653E3E003AE13D /* MyExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54448C3C24653E3E003AE13D /* MyExpensesViewController.swift */; };
 		54448C3F24653E92003AE13D /* MyExpensesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54448C3E24653E92003AE13D /* MyExpensesViewController.storyboard */; };
 		54448C41246550D7003AE13D /* MyExpensesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54448C40246550D7003AE13D /* MyExpensesWireframe.swift */; };
+		54448C432465C15E003AE13D /* MyExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54448C422465C15E003AE13D /* MyExpense.swift */; };
+		54448C452465C48B003AE13D /* MyExpensesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54448C442465C48B003AE13D /* MyExpensesRepository.swift */; };
+		54448C472465C552003AE13D /* MyExpensePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54448C462465C552003AE13D /* MyExpensePresenter.swift */; };
+		54448C492465DC6C003AE13D /* MyExpenseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54448C482465DC6C003AE13D /* MyExpenseTableViewCell.xib */; };
+		54448C4B2465DC83003AE13D /* MyExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54448C4A2465DC83003AE13D /* MyExpenseTableViewCell.swift */; };
 		5451346B24549880000685E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451346A24549880000685E8 /* AppDelegate.swift */; };
 		5451346D24549880000685E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451346C24549880000685E8 /* SceneDelegate.swift */; };
 		5451346F24549880000685E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451346E24549880000685E8 /* ViewController.swift */; };
@@ -65,6 +70,11 @@
 		54448C3C24653E3E003AE13D /* MyExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesViewController.swift; sourceTree = "<group>"; };
 		54448C3E24653E92003AE13D /* MyExpensesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyExpensesViewController.storyboard; sourceTree = "<group>"; };
 		54448C40246550D7003AE13D /* MyExpensesWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesWireframe.swift; sourceTree = "<group>"; };
+		54448C422465C15E003AE13D /* MyExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpense.swift; sourceTree = "<group>"; };
+		54448C442465C48B003AE13D /* MyExpensesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesRepository.swift; sourceTree = "<group>"; };
+		54448C462465C552003AE13D /* MyExpensePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensePresenter.swift; sourceTree = "<group>"; };
+		54448C482465DC6C003AE13D /* MyExpenseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyExpenseTableViewCell.xib; sourceTree = "<group>"; };
+		54448C4A2465DC83003AE13D /* MyExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpenseTableViewCell.swift; sourceTree = "<group>"; };
 		5451346724549880000685E8 /* Curso IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Curso IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5451346A24549880000685E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5451346C24549880000685E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +217,7 @@
 				5456230C245FAD4A00D4040D /* LoginPresenter.swift */,
 				54FAB5D22462ED780096A145 /* NewExpensePresenter.swift */,
 				548118E22464C017004E6C5A /* ProviderSelectorPresenter.swift */,
+				54448C462465C552003AE13D /* MyExpensePresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -228,6 +239,8 @@
 			children = (
 				54AAF61A24645B56009D6E6E /* SelectorTableViewCell.swift */,
 				54AAF61C24645B98009D6E6E /* SelectorTableViewCell.xib */,
+				54448C4A2465DC83003AE13D /* MyExpenseTableViewCell.swift */,
+				54448C482465DC6C003AE13D /* MyExpenseTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +269,7 @@
 				548118E82464C1E7004E6C5A /* CategoriesRepository.swift */,
 				548118EA2464C219004E6C5A /* ProvidersRepository.swift */,
 				54448C3A24651D40003AE13D /* ExpenseRepository.swift */,
+				54448C442465C48B003AE13D /* MyExpensesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -269,6 +283,7 @@
 				548118E42464C139004E6C5A /* Category.swift */,
 				548118E62464C15D004E6C5A /* Provider.swift */,
 				54448C362465187D003AE13D /* NewExpense.swift */,
+				54448C422465C15E003AE13D /* MyExpense.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -373,6 +388,7 @@
 				54FAB5D12462EC8D0096A145 /* NewExpenseViewController.storyboard in Resources */,
 				5451347424549882000685E8 /* Assets.xcassets in Resources */,
 				5451347224549880000685E8 /* Main.storyboard in Resources */,
+				54448C492465DC6C003AE13D /* MyExpenseTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,12 +445,14 @@
 				5468AA3124646B050008985A /* Account.swift in Sources */,
 				54448C3D24653E3E003AE13D /* MyExpensesViewController.swift in Sources */,
 				54E7849C24555E1800CE9B5D /* AuthRepository.swift in Sources */,
+				54448C4B2465DC83003AE13D /* MyExpenseTableViewCell.swift in Sources */,
 				54AAF61B24645B56009D6E6E /* SelectorTableViewCell.swift in Sources */,
 				54E7847B245559E000CE9B5D /* Extensions.swift in Sources */,
 				5451348224549BA7000685E8 /* LoginViewController.swift in Sources */,
 				54448C41246550D7003AE13D /* MyExpensesWireframe.swift in Sources */,
 				5451346F24549880000685E8 /* ViewController.swift in Sources */,
 				548118E72464C15D004E6C5A /* Provider.swift in Sources */,
+				54448C472465C552003AE13D /* MyExpensePresenter.swift in Sources */,
 				548118E52464C139004E6C5A /* Category.swift in Sources */,
 				548118E92464C1E7004E6C5A /* CategoriesRepository.swift in Sources */,
 				5468AA3524646CEE0008985A /* AccountRepository.swift in Sources */,
@@ -455,6 +473,8 @@
 				548118E12464C006004E6C5A /* CategorySelectorPresenter.swift in Sources */,
 				548118E32464C017004E6C5A /* ProviderSelectorPresenter.swift in Sources */,
 				54E784AA24556BF000CE9B5D /* ApiUrls.swift in Sources */,
+				54448C452465C48B003AE13D /* MyExpensesRepository.swift in Sources */,
+				54448C432465C15E003AE13D /* MyExpense.swift in Sources */,
 				54E784AF24556BF000CE9B5D /* BaseRepository.swift in Sources */,
 				54E784A924556BF000CE9B5D /* ApiRequestBuilder.swift in Sources */,
 				54E4E98D2461E9CA007C49D0 /* MainWireframe.swift in Sources */,

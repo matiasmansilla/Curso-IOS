@@ -9,7 +9,24 @@
 import Foundation
 import UIKit
 
+protocol MyExpensePresenterProtocol: class {
+    func newExpenseTapped()
+}
+
 class MyExpensesViewController: UIViewController {
+    
+    var presenter: MyExpensePresenterProtocol?
+    @IBAction func newExpenseTapped(_ sender: Any) {
+        presenter?.newExpenseTapped()
+    }
+    
+    
+}
+
+extension MyExpensesViewController: MyExpenseViewProtocol{
+    func navigateToNewExpense() {
+    ExpensesWireframe.navigateToNewExpense(from: self)
+    }
     
     
 }

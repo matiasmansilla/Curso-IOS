@@ -27,6 +27,9 @@
                                 <state key="normal" title="Nuevo gasto">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="newExpenseTapped:" destination="XqF-mf-4pc" eventType="touchUpInside" id="vI0-Pe-1J4"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eQe-Rh-o6X">
                                 <rect key="frame" x="8" y="174" width="398" height="623"/>

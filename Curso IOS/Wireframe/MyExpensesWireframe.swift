@@ -13,11 +13,10 @@ class MyExpensesWireframe {
     
     static func navigateToMyExpenses(from context: UIViewController) {
         let storyboard = UIStoryboard(name: "MyExpensesViewController", bundle: .main)
-        let MyExpensesVC = storyboard.instantiateViewController(identifier: "MyExpensesViewController") as MyExpensesViewController
-        //let presenter = NewExpensePresenter(view: MyExpensesVC)
-        //MyExpensesVC.presenter = presenter
-        
-        context.navigationController?.setViewControllers([MyExpensesVC], animated: true)
+        let myExpensesVC = storyboard.instantiateViewController(identifier: "MyExpensesViewController") as MyExpensesViewController
+        let presenter = MyExpensePresenter(view: myExpensesVC)
+        myExpensesVC.presenter = presenter
+        context.navigationController?.setViewControllers([myExpensesVC], animated: true)
         
     }
 }
