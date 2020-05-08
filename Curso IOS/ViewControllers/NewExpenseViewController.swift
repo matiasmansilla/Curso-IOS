@@ -14,7 +14,7 @@ protocol NewExpensePresenterProtocol: class {
     func accountTapped()
     func categoryTapped()
     func providerTapped()
-    func createTapped()
+    func createTapped(amount: Double, description: String, quantity: Int)
 
 }
 class NewExpenseViewController : UIViewController {
@@ -33,13 +33,20 @@ class NewExpenseViewController : UIViewController {
     @IBOutlet weak var currencyLabel: UILabel!
     
     @IBAction func createTapped(_ sender: Any) {
-        presenter?.createTapped()
+        let amount : Double = Double(montoTextField?.text ?? "") ?? 0
+        let description = descriptionTextField?.text ?? ""
+        let quantity :Int = Int (quantityTextField?.text ?? "") ?? 0
+        
+        print(amount)
+        print(description)
+        print(quantity)
+        presenter?.createTapped(amount: amount, description: description, quantity : quantity)
     }
     
     @IBAction func LogoutTapped(_ sender: Any) {
         presenter?.logout()
     }
-    
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -96,24 +103,37 @@ class NewExpenseViewController : UIViewController {
 }
 
 extension NewExpenseViewController: NewExpenseViewProtocol {
-    
+ 
     func navigateToHomescreen() {
         MainWireframe.navigateToHomeScreen(from: self)
     }
     
-    func navigateToAccountSelector() {
-        SelectorWireframe.navigateToAccountSelector(from: self)
+    func navigateToAccountSelector(delegate: AccountSelectorDelegate) {
+        SelectorWireframe.navigateToAccountSelector(from: self, delegate: delegate)
     }
     
-    func navigateToCategorySelector() {
-        SelectorWireframe.navigateToCategorySelector(from: self)
+    func navigateToCategorySelector(delegate: CategorySelectorDelegate) {
+        SelectorWireframe.navigateToCategorySelector(from: self, delegate: delegate)
 
     }
     
-    func navigateToProviderSelector() {
-        SelectorWireframe.navigateToProviderSelector(from: self)
+    func navigateToProviderSelector(categoryId: Int, delegate: ProviderSelectorDelegate) {
+        SelectorWireframe.navigateToProviderSelector(from: self, categoryId: categoryId , delegate: delegate)
 
     }
-    //implementacion del protocolo de la vista
+   
+    func showAccountSelected(account: Account) {
+        accountLabel.text = "Cuenta: \(account.name ?? "")"
+        currencyLabel.text = account.currency?.symbol
+    }
+     
+     func showCategorySelected(category: Category) {
+        categoryLabel.text = ("Categoria: \(category.name ?? "")")
+     }
+     
+     func showProviderSelected(provider: Provider) {
+        providerLabel.text = ("Proveedor: \(provider.name ?? "")")
+
+     }
     
 }

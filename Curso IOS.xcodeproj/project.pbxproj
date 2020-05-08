@@ -178,9 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				5451348124549BA7000685E8 /* LoginViewController.swift */,
-				5451346E24549880000685E8 /* ViewController.swift */,
 				54FAB5CE2462EC2F0096A145 /* NewExpenseViewController.swift */,
 				54AAF61324643E0F009D6E6E /* SelectorViewController.swift */,
+				5451346E24549880000685E8 /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -188,10 +188,10 @@
 		5456230B245FAD2500D4040D /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				5456230C245FAD4A00D4040D /* LoginPresenter.swift */,
-				54FAB5D22462ED780096A145 /* NewExpensePresenter.swift */,
 				5468AA362464725F0008985A /* AccountSelectorPresenter.swift */,
 				548118E02464C006004E6C5A /* CategorySelectorPresenter.swift */,
+				5456230C245FAD4A00D4040D /* LoginPresenter.swift */,
+				54FAB5D22462ED780096A145 /* NewExpensePresenter.swift */,
 				548118E22464C017004E6C5A /* ProviderSelectorPresenter.swift */,
 			);
 			path = Presenters;

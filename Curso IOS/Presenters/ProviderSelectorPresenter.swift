@@ -8,12 +8,18 @@
 
 import Foundation
 
+protocol ProviderSelectorDelegate: class{
+    func providerWasSelected(_ provider : Provider)
+}
+
 protocol ProviderSelectorViewProtocol: class {
     func show(providers: [Provider])
 }
 
 class ProviderSelectorPresenter {
     
+    var categoryId: Int?
+    var delegate : ProviderSelectorDelegate?
     let repository = ProvidersRepository()
     var isFetchOk: Bool?
     var providers : [Provider] = []
@@ -27,7 +33,8 @@ class ProviderSelectorPresenter {
 
 extension ProviderSelectorPresenter: SelectorPresentProtocol {
     func fetchData() {
-        repository.getProviders(categoryId: 1) { (isFetchOk, providers, error) in
+        guard let categoryId = categoryId else {return }
+        repository.getProviders(categoryId: categoryId) { (isFetchOk, providers, error) in
             self.isFetchOk = isFetchOk
             self.providers = providers
             
@@ -39,7 +46,7 @@ extension ProviderSelectorPresenter: SelectorPresentProtocol {
     
     func elementSelected(at index: Int) {
         let selectedProvider = providers[index]
-        print(selectedProvider.name ?? "")
+        delegate?.providerWasSelected(selectedProvider)
     }
     
     

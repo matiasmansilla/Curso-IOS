@@ -8,12 +8,17 @@
 
 import Foundation
 
+protocol  AccountSelectorDelegate: class {
+    func accountWasSelected(_ account: Account)
+}
+
 protocol AccountSelectorViewProtocol: class {
     func show(accounts: [Account])
 }
 
 class AccountSelectorPresenter {
     
+    var delegate : AccountSelectorDelegate? // a quien notificar eventos
     let repository = AccountRepository()
     var accounts: [Account] = []
     weak var view: AccountSelectorViewProtocol?
@@ -35,7 +40,7 @@ extension AccountSelectorPresenter: SelectorPresentProtocol{
     
     func elementSelected(at index : Int) {
         let selectedAccount = accounts[index]
-        print(selectedAccount.name ?? "")
+        delegate?.accountWasSelected(selectedAccount)
 
     }
     
