@@ -18,15 +18,23 @@ protocol NewExpenseViewProtocol: class {
     func showAccountSelected(account: Account)
     func showCategorySelected(category: Category)
     func showProviderSelected(provider: Provider)
+    
+    func showSuccess(message: String)
+    func showError(message: String)
+    
 }
 
 class NewExpensePresenter {
     
+    let repository = ExpenseRepository()
     weak var view: NewExpenseViewProtocol?
     
     var selectedAccount: Account?
     var selectedCategory: Category?
     var selectedProvider: Provider?
+    var amount: Double?
+    var description: String?
+    var quantity: Int?
 
     
     init(view: NewExpenseViewProtocol) {
@@ -58,12 +66,58 @@ extension NewExpensePresenter: NewExpensePresenterProtocol {
     }
     
     func createTapped(amount: Double, description: String, quantity: Int) {
-        print(selectedAccount?.name)
-        print(selectedCategory?.name)
-        print(selectedProvider?.name)
-        print(amount)
-        print(description)
-        print(quantity)
+        self.amount = amount
+        self.description = description
+        self.quantity = quantity
+        
+        guard validateInputs() else{return}
+        let newExpense = getNewExpense()
+        repository.createExpense(expense: newExpense) { (successMsg, errorMsg) in
+            
+            if errorMsg == nil {
+                self.view?.showSuccess(message: successMsg ?? "")
+            }else {
+                self.view?.showError(message: errorMsg ?? "")
+            }
+        }
+    }
+    func getNewExpense() -> NewExpense{
+        let newExpense = NewExpense()
+        newExpense.amount = amount
+        newExpense.description = description
+        newExpense.numberOfItems = quantity
+        newExpense.accountId = selectedAccount?.id
+        newExpense.categoryId = selectedCategory?.id
+        newExpense.providerId = selectedProvider?.id
+        return newExpense
+    }
+    
+    func validateInputs()->Bool {
+        guard selectedAccount != nil else {
+            view?.showError(message: "Debe seleccionar una cuenta!")
+            return false
+        }
+        guard selectedCategory != nil else {
+            view?.showError(message: "Debe seleccionar una categoria!")
+            return false
+        }
+        guard selectedProvider != nil else {
+            view?.showError(message: "Debe seleccionar un proveedor!")
+            return false
+        }
+        guard let amount = amount, amount > 0.0 else {
+            view?.showError(message: "Ingrese un monto dstinto de cero!")
+            return false
+        }
+        guard let description = description, !description.isEmpty else {
+            view?.showError(message: "Ingrese una descripcion!")
+            return false
+        }
+        guard let quantity = quantity, quantity > 0 else {
+            view?.showError(message: "Ingrese una cantidad distinta de cero!")
+            return false
+        }
+        return true
     }
     
     func logout(){

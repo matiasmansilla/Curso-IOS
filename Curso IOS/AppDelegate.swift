@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let user = SessionHelper().getUser()
-        print(user?.name ?? "defaultEmpty")
-        print(user?.token ?? "defautlEmpty")
+        IQKeyboardManager.shared.enable = true //keyboard piola
+        
         // Override point for customization after application launch.
         return true
     }

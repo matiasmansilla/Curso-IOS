@@ -43,7 +43,7 @@ extension LoginViewController: LoginViewProtocol{
     }
     
     func showLoginSucess() {
-        print("Login Success")
+        MainWireframe.navigateToHomeScreen(from: self)
     }
     
     

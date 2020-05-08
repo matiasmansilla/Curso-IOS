@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		53CC7794958877881C3FDDF3 /* Pods_Curso_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9786A70EFE80CE031D1E006E /* Pods_Curso_IOS.framework */; };
+		54448C372465187D003AE13D /* NewExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54448C362465187D003AE13D /* NewExpense.swift */; };
+		54448C3924651A6C003AE13D /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54448C3824651A6C003AE13D /* MessageResponse.swift */; };
+		54448C3B24651D40003AE13D /* ExpenseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54448C3A24651D40003AE13D /* ExpenseRepository.swift */; };
 		5451346B24549880000685E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451346A24549880000685E8 /* AppDelegate.swift */; };
 		5451346D24549880000685E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451346C24549880000685E8 /* SceneDelegate.swift */; };
 		5451346F24549880000685E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451346E24549880000685E8 /* ViewController.swift */; };
@@ -53,6 +56,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54448C362465187D003AE13D /* NewExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpense.swift; sourceTree = "<group>"; };
+		54448C3824651A6C003AE13D /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
+		54448C3A24651D40003AE13D /* ExpenseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRepository.swift; sourceTree = "<group>"; };
 		5451346724549880000685E8 /* Curso IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Curso IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5451346A24549880000685E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5451346C24549880000685E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +246,7 @@
 				5468AA3424646CEE0008985A /* AccountRepository.swift */,
 				548118E82464C1E7004E6C5A /* CategoriesRepository.swift */,
 				548118EA2464C219004E6C5A /* ProvidersRepository.swift */,
+				54448C3A24651D40003AE13D /* ExpenseRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -252,6 +259,7 @@
 				5468AA3224646B6D0008985A /* Currency.swift */,
 				548118E42464C139004E6C5A /* Category.swift */,
 				548118E62464C15D004E6C5A /* Provider.swift */,
+				54448C362465187D003AE13D /* NewExpense.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 				54E784A024556BEF00CE9B5D /* ApiRequestBuilder.swift */,
 				54E784A124556BEF00CE9B5D /* ApiUrls.swift */,
 				54E784A224556BEF00CE9B5D /* LoginResponse.swift */,
+				54448C3824651A6C003AE13D /* MessageResponse.swift */,
 				54E784A324556BEF00CE9B5D /* Base */,
 			);
 			path = Network;
@@ -422,11 +431,13 @@
 				548118EB2464C219004E6C5A /* ProvidersRepository.swift in Sources */,
 				5468AA3324646B6D0008985A /* Currency.swift in Sources */,
 				54E784AB24556BF000CE9B5D /* LoginResponse.swift in Sources */,
+				54448C3B24651D40003AE13D /* ExpenseRepository.swift in Sources */,
 				54562310245FB1F700D4040D /* LoginWireframe.swift in Sources */,
 				54E784B024556BF000CE9B5D /* HttpManager.swift in Sources */,
 				54AAF61424643E0F009D6E6E /* SelectorViewController.swift in Sources */,
 				54E784AE24556BF000CE9B5D /* HttpRequestBuilder.swift in Sources */,
 				54FAB5D72462F0E10096A145 /* ExpensesWireframe.swift in Sources */,
+				54448C372465187D003AE13D /* NewExpense.swift in Sources */,
 				54AAF61824643E9A009D6E6E /* SelectorWireframe.swift in Sources */,
 				54E4E98A2461C657007C49D0 /* SessionHelper.swift in Sources */,
 				548118E12464C006004E6C5A /* CategorySelectorPresenter.swift in Sources */,
@@ -437,6 +448,7 @@
 				54E4E98D2461E9CA007C49D0 /* MainWireframe.swift in Sources */,
 				54E7849A24555D9D00CE9B5D /* User.swift in Sources */,
 				54E784AC24556BF000CE9B5D /* ErrorReponse.swift in Sources */,
+				54448C3924651A6C003AE13D /* MessageResponse.swift in Sources */,
 				5451346B24549880000685E8 /* AppDelegate.swift in Sources */,
 				5468AA372464725F0008985A /* AccountSelectorPresenter.swift in Sources */,
 				54FAB5CF2462EC2F0096A145 /* NewExpenseViewController.swift in Sources */,
