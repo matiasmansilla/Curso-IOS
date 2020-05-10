@@ -12,6 +12,7 @@ import ObjectMapper
 class Category: Mappable {
     
     var id: Int?
+    var needsNumberOfItemsInExpenses : Bool?
     var name: String?
     var description: String?
     
@@ -20,7 +21,8 @@ class Category: Mappable {
     required init?(map: Map) {}
     
     func mapping(map: Map) {
-        id <- map["id"]
+        needsNumberOfItemsInExpenses <- map["needsNumberOfItemsInExpenses"]
+        description <- map["description"]
         name <- map["name"]
         description <- map["description"]
     }

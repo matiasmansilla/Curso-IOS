@@ -17,6 +17,8 @@ class MyExpense: Mappable {
     var numberOfItems: Int?
     var provider: Provider?
     var description: String?
+    var createdAt: String?
+    var user: UserApp?
     
     init() {}
     
@@ -30,6 +32,9 @@ class MyExpense: Mappable {
         numberOfItems <- map["numberOfItems"]
         provider <- map["provider"]
         description <- map["description"]
+        createdAt <- map["createdAt"]
+        user <- map["user"]
+        
 
     }
 }

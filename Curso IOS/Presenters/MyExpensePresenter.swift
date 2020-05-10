@@ -8,27 +8,24 @@
 
 import Foundation
 
+protocol MyExpenseSelectorDelegate: class{
+    func myExpenseWasSelected(_ myExpense: MyExpense)
+}
+
 protocol MyExpenseViewProtocol: class {
     func navigateToNewExpense()
-//    func navigateToAccountSelector(delegate: AccountSelectorDelegate)
-//    func navigateToCategorySelector(delegate: CategorySelectorDelegate)
-//    func navigateToProviderSelector( categoryId: Int, delegate: ProviderSelectorDelegate)
-//    func showAccount()
-
-    
+    func showMyExpenses(myExpenses: [MyExpense])
+    func navigateToMyExpenseDetail()
+    func navigateToHomescreen()
 }
 
 class MyExpensePresenter{
     let repository = MyExpensesRepository()
+    var myExpenses : [MyExpense] = []
+    var delegate : MyExpenseSelectorDelegate?
+    //var myExpenseSelected: MyExpense?
+    
     weak var view: MyExpenseViewProtocol?
-//
-//    var selectedAccount: Account?
-//    var selectedCategory: Category?
-//    var selectedProvider: Provider?
-//    var amount: Double?
-//    var description: String?
-//    var quantity: Int?
-
     
     init(view: MyExpenseViewProtocol) {
         self.view = view
@@ -37,9 +34,28 @@ class MyExpensePresenter{
 }
 
 extension MyExpensePresenter: MyExpensePresenterProtocol{
+        func logout() {
+        SessionHelper().cleanSession()
+        view?.navigateToHomescreen()
+    }
+    
+    func fetchdata() {
+        repository.getMyExpenses { (myExpenses, error) in
+            self.myExpenses = myExpenses ?? []
+            self.view?.showMyExpenses(myExpenses: myExpenses ?? [])
+            
+        }
+    }
+    
+    func elementSelected(at index: Int) {
+        let myExpenseSelected = myExpenses[index]
+        delegate?.myExpenseWasSelected(myExpenseSelected)
+    }
+    
     func newExpenseTapped() {
     self.view?.navigateToNewExpense()
     }
-    
-    
 }
+
+
+

@@ -18,7 +18,7 @@ class SelectorWireframe {
         let presenter = AccountSelectorPresenter(view: vc)
         vc.presenter = presenter
         presenter.delegate = delegate
-       context.navigationController?.pushViewController(vc, animated: true)
+        context.navigationController?.pushViewController(vc, animated: true)
     }
     
     

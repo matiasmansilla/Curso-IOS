@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol NewExpensePresenterProtocol: class {
-    func logout()
+
     func accountTapped()
     func categoryTapped()
     func providerTapped()
@@ -19,6 +19,8 @@ protocol NewExpensePresenterProtocol: class {
 }
 class NewExpenseViewController : UIViewController {
     
+    
+    var enableQuantityTextField : Bool = true
     var presenter: NewExpensePresenterProtocol?
     
     @IBOutlet weak var accountContainer: UIView!
@@ -32,6 +34,8 @@ class NewExpenseViewController : UIViewController {
     @IBOutlet weak var quantityTextField: UITextField!
     @IBOutlet weak var currencyLabel: UILabel!
     
+    
+    
     @IBAction func createTapped(_ sender: Any) {
         let amount : Double = Double(montoTextField?.text ?? "") ?? 0
         let description = descriptionTextField?.text ?? ""
@@ -40,18 +44,20 @@ class NewExpenseViewController : UIViewController {
         print(amount)
         print(description)
         print(quantity)
+        
         presenter?.createTapped(amount: amount, description: description, quantity : quantity)
+    
     }
     
-    @IBAction func LogoutTapped(_ sender: Any) {
-        presenter?.logout()
-    }
-       
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        
         setupUI()
     }
     private func setupUI(){
+        quantityTextField.isHidden = enableQuantityTextField
         accountContainer?.layer.borderWidth = 1
         accountContainer?.layer.borderColor = UIColor.lightGray.cgColor
         accountContainer?.layer.cornerRadius = 8
@@ -88,6 +94,9 @@ class NewExpenseViewController : UIViewController {
         let gesture3 = UITapGestureRecognizer(target: self, action: #selector(providertSelectorTapped))
         providerContainer?.addGestureRecognizer(gesture3)
         providerContainer?.isUserInteractionEnabled = true
+        
+        
+        
     }
     
     @objc private func accountSelectorTapped(){
@@ -100,9 +109,16 @@ class NewExpenseViewController : UIViewController {
     @objc private func providertSelectorTapped(){
         presenter?.providerTapped()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
 }
 
 extension NewExpenseViewController: NewExpenseViewProtocol {
+    
     func showSuccess(message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -115,11 +131,6 @@ extension NewExpenseViewController: NewExpenseViewProtocol {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
 
-    }
-    
- 
-    func navigateToHomescreen() {
-        MainWireframe.navigateToHomeScreen(from: self)
     }
     
     func navigateToAccountSelector(delegate: AccountSelectorDelegate) {
@@ -139,10 +150,12 @@ extension NewExpenseViewController: NewExpenseViewProtocol {
     func showAccountSelected(account: Account) {
         accountLabel.text = "Cuenta: \(account.name ?? "")"
         currencyLabel.text = account.currency?.symbol
+        
     }
      
      func showCategorySelected(category: Category) {
         categoryLabel.text = ("Categoria: \(category.name ?? "")")
+        
      }
      
      func showProviderSelected(provider: Provider) {

@@ -12,8 +12,6 @@ protocol NewExpenseViewProtocol: class {
     func navigateToAccountSelector(delegate: AccountSelectorDelegate)
     func navigateToCategorySelector(delegate: CategorySelectorDelegate)
     func navigateToProviderSelector( categoryId: Int, delegate: ProviderSelectorDelegate)
-    //func showAccount()
-    func navigateToHomescreen()
     
     func showAccountSelected(account: Account)
     func showCategorySelected(category: Category)
@@ -35,6 +33,7 @@ class NewExpensePresenter {
     var amount: Double?
     var description: String?
     var quantity: Int?
+    
 
     
     init(view: NewExpenseViewProtocol) {
@@ -53,16 +52,17 @@ extension NewExpensePresenter: NewExpensePresenterProtocol {
     
     func categoryTapped() {
         view?.navigateToCategorySelector(delegate: self)
+        
     }
     
     func providerTapped() {
-        if let categoryId = selectedCategory?.id{
+        print (selectedCategory?.id)
+        print (selectedAccount?.name)
+        if let categoryId = selectedCategory?.id {
             view?.navigateToProviderSelector(categoryId: categoryId, delegate: self)
         } else {
-            print("Debe seleccionar una categoria")
+            print("no seleccionó categoria aun")
         }
-        
-        
     }
     
     func createTapped(amount: Double, description: String, quantity: Int) {
@@ -118,11 +118,6 @@ extension NewExpensePresenter: NewExpensePresenterProtocol {
             return false
         }
         return true
-    }
-    
-    func logout(){
-    SessionHelper().cleanSession()
-    view?.navigateToHomescreen()
     }
 }
 

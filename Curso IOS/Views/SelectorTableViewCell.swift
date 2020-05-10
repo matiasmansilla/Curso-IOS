@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class SelectorTableViewCell: UITableViewCell{
+    
+    
     @IBOutlet private var labelCell:UILabel?
     
     func set(text: String){

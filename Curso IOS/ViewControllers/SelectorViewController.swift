@@ -30,7 +30,7 @@ class SelectorViewController: UIViewController {
         //MUCHO MUY IMPORTANTE(le digo quien es su dataSource y su delegate)
         tableview?.dataSource = self
         tableview?.delegate = self
-        // tableview?.rowHeight = 100       //nos va servir pa la prox pantalla
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +48,7 @@ extension SelectorViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row     // tenemos solo una section(x eso la ignoramos)
-        //recupere cell de id "cell" y le seteamos un texto
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? SelectorTableViewCell{
             cell.set(text: elements[row])
             return cell
